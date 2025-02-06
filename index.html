@@ -30,10 +30,10 @@
     .button:hover {
       background-color: #ff69b4;
     }
-    #thank-you {
+    #I-love-you {
       display: none;
     }
-    #thank-you p {
+    #I-love-you p {
       font-size: 2.5em;
       color: #ff1493;
       margin: 20px 0;
@@ -75,7 +75,7 @@
   <button id="yes-button" class="button">Yes</button>
   <button id="no-button" class="button">No</button>
 
-  <div id="thank-you">
+  <div id="I-love-you">
     <p>I love you! ❤️</p>
     <img src="https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif" alt="Cute Plush GIF">
   </div>
@@ -83,12 +83,12 @@
   <script>
     let yesButton = document.getElementById('yes-button');
     let noButton = document.getElementById('no-button');
-    let thankYouMessage = document.getElementById('thank-you');
+    let IloveyouMessage = document.getElementById('i-love-you');
 
     yesButton.addEventListener('click', () => {
       yesButton.style.display = 'none';
       noButton.style.display = 'none';
-      thankYouMessage.style.display = 'block';
+      IloveYouMessage.style.display = 'block';
       generateHearts();
     });
 
