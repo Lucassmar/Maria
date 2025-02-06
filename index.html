@@ -9,7 +9,7 @@
       background-color: #ffc0cb;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       text-align: center;
-      overflow: hidden;
+      padding: 50px;
     }
     h1 {
       color: #ff69b4;
@@ -32,16 +32,6 @@
     #yes-button {
       margin-right: 20px;
     }
-    #thank-you {
-      display: none;
-      font-size: 2em;
-      color: #ff69b4;
-      margin-top: 20px;
-    }
-    #thank-you img {
-      width: 300px;
-      margin-top: 20px;
-    }
     .plush {
       position: absolute;
       animation: float 4s infinite;
@@ -55,27 +45,15 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
-
-    .heart {
-      position: absolute;
-      color: red;
-      font-size: 24px;
-      animation: rise 5s infinite ease-in-out;
+    #thank-you {
+      display: none;
+      font-size: 2em;
+      color: #ff69b4;
+      margin-top: 20px;
     }
-
-    @keyframes rise {
-      0% {
-        opacity: 0;
-        transform: translateY(0) scale(0.5);
-      }
-      50% {
-        opacity: 1;
-        transform: translateY(-100px) scale(1.2);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-300px) scale(0.8);
-      }
+    #thank-you img {
+      width: 200px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -87,12 +65,8 @@
   </div>
   <div id="thank-you">
     <p>Thank you! 🥰</p>
-    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cute Plush GIF">
+    <img src="https://cdn.pixabay.com/photo/2016/10/25/12/28/teddy-bear-1769352_1280.png" alt="Cute Plush">
   </div>
-
-  <img src="https://i.imgur.com/3Z9pC4Y.png" alt="Plush 1" class="plush plush1">
-  <img src="https://i.imgur.com/8Ktxy5A.png" alt="Plush 2" class="plush plush2">
-  <img src="https://i.imgur.com/IV92tP0.png" alt="Plush 3" class="plush plush3">
 
   <script>
     let yesButton = document.getElementById('yes-button');
@@ -121,20 +95,7 @@
     yesButton.addEventListener('click', () => {
       buttonContainer.style.display = 'none';
       thankYouMessage.style.display = 'block';
-      generateHearts();
     });
-
-    function generateHearts() {
-      for (let i = 0; i < 20; i++) {
-        let heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDelay = Math.random() * 5 + 's';
-        heart.innerText = '❤️';
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 5000);
-      }
-    }
   </script>
 </body>
 </html>
